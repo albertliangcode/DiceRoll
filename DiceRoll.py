@@ -14,9 +14,11 @@ from random import *
 # Main Program =================================================================
 def main():
     print "Welcome to Dice Roll!\n"
+    wFile_name = raw_input( "Please enter name of file to save results to: " )
+    print ""
 
     while(True):
-        count = raw_input("How many dice? (\"q\" to quit): ")
+        count = raw_input( "How many dice? (\"q\" to quit): " )
         if( count.lower() == 'q' ):
             break
         elif( not( StringRepInt(count) ) ):
@@ -29,6 +31,11 @@ def main():
 	        roll = randint(1,6)
 	        result.append(roll)
 	    print "Results: ", result, "\n"
+	    with open( wFile_name,'w+') as writeFile:
+		writeFile.write('Results of last dice roll:\n')
+		writeFile.write('====================================\n')
+		for num in result:
+		    writeFile.write( str(num) + '\n' )
 
     print ("Exiting...\n\n")
 
