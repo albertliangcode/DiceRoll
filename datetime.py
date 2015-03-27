@@ -1,7 +1,7 @@
 """
 DateTime
 
-3/27/15
+3/26/15
 Albert Liang
 
 Importing the time module, print the current global and local date and time to console.
